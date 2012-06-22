@@ -1,0 +1,29 @@
+Gmail account
+BillAndJay42@gmail.com
+pw=Danger42
+
+GitHub.com account
+ID=jayandbill
+PW=Danger42
+
+Connection URL
+https://github.com/jayandbill/Project01.git
+
+
+SourceForge account: (not used)
+jayandbill (all lower case)
+pw=Danger42
+
+API Key: 9a8ec444605ea12e8912
+
+Secret Key: b59720c61cf153707d0ddcbf97e242dd80d72ad7ea8cb99525e5e750685527590f4239d639bfffbd
+
+Project Name: Jay And Bill's Excellent Adventure
+
+URL: jayandbillsexce
+
+
+
+
+File / Import / Git
+Host  = ssh://jayandbill @jayandbillsexce.git.sourceforge.net/gitroot/jayandbillsexce/
