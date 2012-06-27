@@ -7,6 +7,7 @@ public class ConfigGUI extends javax.swing.JFrame {
      AlgebraGUI GUI = null;
     /** Creates new form ConfigGUI */
     public ConfigGUI(AlgebraGUI g, PolynomialExpression p) {
+    	setTitle("Settings");
         initComponents();
         GUI = g;
         this.p = p;

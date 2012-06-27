@@ -2,6 +2,13 @@ package AlgebraGUI;
 import PolynomialExpressionGenerator.Expression;
 import PolynomialExpressionGenerator.PolynomialExpression;
 import TestWizard.TestWizard;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import javax.swing.KeyStroke;
+import java.awt.event.KeyEvent;
+import java.awt.event.InputEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class AlgebraGUI extends javax.swing.JFrame {
     private PolynomialExpression poly = new PolynomialExpression();
@@ -23,7 +30,6 @@ public class AlgebraGUI extends javax.swing.JFrame {
         MethodToAnswer = new javax.swing.JComboBox();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
         RunMenu = new javax.swing.JMenuItem();
         ExitMenu = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
@@ -57,15 +63,6 @@ public class AlgebraGUI extends javax.swing.JFrame {
                 jMenu1ActionPerformed(evt);
             }
         });
-
-        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem1.setText("Test Creator Wizard");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem1);
 
         RunMenu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
         RunMenu.setText("Run!");
@@ -101,6 +98,30 @@ public class AlgebraGUI extends javax.swing.JFrame {
         jMenuBar1.add(jMenu3);
 
         setJMenuBar(jMenuBar1);
+        
+        mnHelp = new JMenu("Help");
+        jMenuBar1.add(mnHelp);
+        
+        About = new JMenuItem("About");
+        About.addActionListener(new ActionListener() {
+        	public void actionPerformed(java.awt.event.ActionEvent evt) {
+        		AboutActionPerformed(evt);
+        	}
+        });
+        About.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A, InputEvent.CTRL_MASK));
+        mnHelp.add(About);
+        
+        Help = new JMenuItem("Help");
+        Help.addActionListener(new ActionListener() {
+        	public void actionPerformed(java.awt.event.ActionEvent evt) {
+        		HelpActionPerformed(evt);
+        		
+        	}
+
+			
+        });
+        Help.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_H, InputEvent.CTRL_MASK));
+        mnHelp.add(Help);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -195,6 +216,16 @@ public class AlgebraGUI extends javax.swing.JFrame {
     }
 }//GEN-LAST:event_RunMenuActionPerformed
 
+    private void HelpActionPerformed(ActionEvent evt) {
+    	HelpGUI help = new HelpGUI();
+    	help.setVisible(true);
+      //HelpActionPerformed
+    }
+    
+    private void AboutActionPerformed(ActionEvent evt) {
+    	AboutGUI about = new AboutGUI();
+    	about.setVisible(true);
+    }
     private void ConfigPolyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfigPolyActionPerformed
         ConfigGUI config = new ConfigGUI(this, poly);
         config.setVisible(true);
@@ -228,13 +259,6 @@ public class AlgebraGUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_AnswerActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
-        TestWizard tw = new TestWizard();
-        tw.setVisible(true);
-
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -256,7 +280,9 @@ public class AlgebraGUI extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
+    private JMenu mnHelp;
+    private JMenuItem Help;
+    private JMenuItem About;
     // End of variables declaration//GEN-END:variables
 
 }
